@@ -22,9 +22,9 @@ const LeaderboardPage = () => {
         route = `bestScores/${world}`;
       }
 
-      const response = await fetch(`http://localhost:3000/scores/${route}`);
+      const response = await fetch(`${process.env.API_BASE_URL}/scores/${route}`);
       if (!response.ok) {
-        throw new Error('Réponse Network pas ok');
+        throw new Error('Erreur de réseau.');
       }
       const data = await response.json();
 

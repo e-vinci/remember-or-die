@@ -4,7 +4,7 @@ const THIS_PLAYER = 2;
 
 const fetchInvitations = async () => {
   try {
-    const response = await fetch(`http://localhost:3000/alliances/invitations/${THIS_PLAYER}`);
+    const response = await fetch(`${process.env.API_BASE_URL}/alliances/invitations/${THIS_PLAYER}`);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -16,7 +16,7 @@ const fetchInvitations = async () => {
 
 const fetchAllies = async () => {
   try {
-    const response = await fetch(`http://localhost:3000/alliances/allies/${THIS_PLAYER}`);
+    const response = await fetch(`${process.env.API_BASE_URL}/alliances/allies/${THIS_PLAYER}`);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -28,7 +28,7 @@ const fetchAllies = async () => {
 
 const acceptInvitation = async (sender) => {
   try {
-    await fetch(`http://localhost:3000/alliances/${THIS_PLAYER}/${sender}?action=accept`, {
+    await fetch(`${process.env.API_BASE_URL}/alliances/${THIS_PLAYER}/${sender}?action=accept`, {
       method: 'PUT',
     });
     fetchAllies();
@@ -41,7 +41,7 @@ const acceptInvitation = async (sender) => {
 
 const rejectInvitation = async (sender) => {
   try {
-    await fetch(`http://localhost:3000/alliances/${THIS_PLAYER}/${sender}?action=reject`, {
+    await fetch(`${process.env.API_BASE_URL}/alliances/${THIS_PLAYER}/${sender}?action=reject`, {
       method: 'PUT',
     });
     fetchInvitations();
@@ -53,7 +53,7 @@ const rejectInvitation = async (sender) => {
 
 const removeAlly = async (ally) => {
   try {
-    await fetch(`http://localhost:3000/alliances/${THIS_PLAYER}/${ally}`, {
+    await fetch(`${process.env.API_BASE_URL}/alliances/${THIS_PLAYER}/${ally}`, {
       method: 'DELETE',
     });
     fetchAllies();
@@ -287,7 +287,7 @@ const AlliesPage = async () => {
       const allyToBeAdded = nameInput.value;
       if (allyForm.checkValidity()) {
         try {
-          const response = await fetch(`http://localhost:3000/alliances/${THIS_PLAYER}`, {
+          const response = await fetch(`${process.env.API_BASE_URL}/alliances/${THIS_PLAYER}`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

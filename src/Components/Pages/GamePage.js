@@ -3,6 +3,7 @@
 /* eslint-disable no-plusplus */
 // eslint-disable-next-line
 import anime from 'animejs';
+// eslint-disable-next-line import/no-unresolved
 import levels from '../../../../data/level.json';
 import { clearPage } from '../../utils/render';
 import imgheart from '../../assets/default/heart.png';
