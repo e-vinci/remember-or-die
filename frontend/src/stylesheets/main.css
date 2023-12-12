@@ -1,0 +1,312 @@
+@font-face {
+  font-family: 'FantasyFont';
+  src: url('../assets/fonts/EightBitDragon-anqx.ttf') format('truetype');
+}
+
+head,
+body {
+  font-size: xx-large;
+  font-family: 'FantasyFont', sans-serif;
+  user-select: none;
+}
+
+.card-container {
+  font-family: 'FantasyFont', sans-serif;
+  font-size: 120px;
+  font-weight: bold;
+  width: 125px;
+  height: 175px;
+  margin: 80px auto;
+  border-radius: 10px;
+  perspective: 1400px;
+}
+
+.card {
+  position: relative;
+  height: 75%;
+  border-radius: 10px;
+  width: 50%;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+
+.front {
+  color: #fff;
+  background: #ffa500;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform: rotateY(180deg);
+  background: black;
+}
+
+#btnStart {
+  position: fixed;
+  font-size: 120px;
+  font-weight: bold;
+  border-radius: 10px;
+  color: #fff;
+  background: none;
+  backface-visibility: hidden;
+  cursor: grab;
+  transform-origin: top left;
+}
+
+#btnStart:hover {
+  background: none;
+  color: #4e5153;
+}
+
+.full-screen-bg {
+  background-image: url('../img/backgrounds/mainBg.gif');
+  background-size: 100% 100%;
+  background-position: top left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.container-fluid {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-menu {
+  position: absolute;
+  top: 40%;
+  left: 2%;
+  width: fit-content;
+  padding: 2%;
+  background-color: #3a3a3a00;
+  user-select: none;
+}
+
+.game-menu .list-group-item {
+  background-color: #5e5e5e;
+  color: #ffffff;
+  border-radius: 20px;
+  border-color: rgba(33, 149, 243, 0);
+  padding: 1vw 2vw;
+  margin: 1vw 0;
+  text-decoration: none;
+  transition: background-color 0.5s ease-in-out;
+  background-image: url('../assets/textures/black_rock_texture.png');
+  text-align: center;
+}
+
+.game-menu .list-group-item:hover {
+  background-image: url('../assets/textures/rock_textures.png');
+}
+
+.btn-secondary:hover {
+  background-color: lightgray;
+  border-color: lightgray;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .game-menu {
+    width: 20%;
+    padding: 4%;
+  }
+
+  .game-menu .list-group-item {
+    font-size: 4vw;
+    padding: 1vw 1vw;
+    margin: 1vw 0;
+  }
+}
+
+/* ========================================================*/
+
+.game-menu-alex {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 350px;
+  padding: 2%;
+  background-color: #3a3a3a00;
+  user-select: none;
+}
+
+.game-menu-alex .list-group-item-alex {
+  background-color: #5e5e5e;
+  color: #ffffff;
+  border-radius: 20px;
+  border-color: rgba(0, 0, 0, 0);
+  padding: 1vw 3vw;
+  margin: 1vw 0;
+  text-decoration: none;
+  text-align: center;
+}
+
+.game-menu-alex .list-group-item-alex:hover {
+  transform: scale(1.2);
+}
+
+
+.easy-image_back{
+  background-image: url('../img/backgrounds/levelMapPage2.png');
+  background-position: top;
+  
+}
+
+.medium-image_back{
+  background-image: url('../img/backgrounds/levelMapPageLave2.png');
+  background-position: top;
+  
+}
+
+.hard-image_back{
+  background-image: url('../img/backgrounds/levelMapPageDesert.png');
+  background-position: top;
+}
+
+@media (max-width: 768px) {
+  .game-menu-alex {
+    width: 20%;
+    padding: 4%;
+  }
+
+  .game-menu-alex .list-group-item-alex {
+    font-size: 4vw;
+    padding: 1vw 1vw;
+    margin: 1vw 0;
+  }
+}
+/* ========================================================*/
+
+/* Ajouté par Kusay pour avoir toute la page en noir */
+body {
+  background-color: black;
+  color: white; /* Text color */
+}
+
+/* Fond orange pour la navbar */
+.bg-orange {
+  background-color: #ffa500; /* Code couleur orange */
+}
+
+/* Texte noir pour les liens de la navbar */
+.bg-orange .navbar-nav .nav-link {
+  color: #000000; /* Code couleur noir */
+}
+
+/* Texte noir au survol */
+.bg-orange .navbar-nav .nav-link:hover {
+  color: #000000; /* Code couleur noir */
+}
+.bossAndPlayer {
+  border-bottom: 1px solid #ffffff;
+  display: grid;
+  grid-template-areas: 'heart vs bossLife';
+  grid-template-columns: repeat(3, 1fr);
+}
+.divBoss {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boss {
+  width: 30%;
+  height: 90%;
+}
+#life {
+  grid-area: bossLife;
+  width: 100%;
+  height: 9%;
+  border: 1px solid #ffffff;
+  text-align: center;
+}
+
+#LifeBar {
+  height: 100%;
+  width: 100%;
+  background-color: #ff0000;
+  font-size: 50%;
+}
+#divVersus {
+  grid-area: vs;
+}
+
+.imgBoss {
+  width: AUTO;
+  height: 125px;
+  margin-bottom: 10px;
+}
+
+.card-found .back {
+  pointer-events: none; /* Désactive les événements de pointer (clics) sur les cartes trouvées */
+}
+
+.card-found .back img {
+  opacity: 1; /* Rend l'image de la carte trouvée visible */
+}
+.divHearts {
+  margin-bottom: 2%;
+}
+.hearts {
+  grid-area: heart;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.heart,
+.skull {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+
+.imagesOfCards {
+  width: 60%;
+  height: 50%;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.general-table {
+  max-width: 60%;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.general-table th,
+.general-table td {
+  text-align: center;
+}
+
+.general-table th {
+  width: 20%;
+}
+
+.general-table td {
+  width: 40%;
+}
