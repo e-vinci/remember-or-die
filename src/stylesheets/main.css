@@ -1,0 +1,523 @@
+@font-face {
+  font-family: 'FantasyFont';
+  src: url('../assets/fonts/EightBitDragon-anqx.ttf') format('truetype');
+}
+
+head,
+body {
+  font-size: x-large;
+  font-family: 'FantasyFont', sans-serif;
+  user-select: none;
+}
+
+#memoryTimer,#gameTimer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+.card-container {
+  font-family: 'FantasyFont', sans-serif;
+  font-size: 120px;
+  font-weight: bold;
+  width: 125px;
+  height: 175px;
+  margin: auto auto;
+  border-radius: 10px;
+  perspective: 1400px;
+}
+
+.card {
+  position: relative;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  
+}
+
+.front,
+.back {
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  
+  
+}
+
+.front {
+  color: #fff;
+  background: #ffa500;
+  font-size: 90px;
+}
+
+.back {
+  position:absolute;
+  top: 0;
+  left: 0;
+
+  transform: rotateY(180deg);
+  background: black;
+}
+
+#btnStart {
+  position: fixed;
+  font-size: 120px;
+  font-weight: bold;
+  border-radius: 10px;
+  color: #fff;
+  background: none;
+  backface-visibility: hidden;
+  cursor: grab;
+  transform-origin: top left;
+}
+
+#btnStart:hover {
+  background: none;
+  color: #4e5153;
+}
+
+.full-screen-bg {
+  background-image: url('../img/backgrounds/mainBg.gif');
+  background-size: 100% 100%;
+  background-position: top left;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.full-screen-wood {
+  background-image: url('../img/backgrounds/ProfilImage.png');
+  background-size: 100% 100%;
+  background-position: top left;
+  position: fixed;
+  top: 11%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  z-index: -2;
+}
+
+.container-fluid-profile {
+  position: fixed;
+  top: 23%;
+  left: 17%;
+  width: 40%;
+  height: 40%;
+}
+
+.img-profile {
+  position: fixed;
+  top: 26%;
+  left: 71%;
+  width: 9%;
+  height: 15%;
+  border-radius: 50%;
+}
+
+.img-profile-shield {
+  position: fixed;
+  top: 23%;
+  left: 70%;
+  width: 11%;
+  height: 22%;
+}
+
+.button-profile-password {
+  position: fixed;
+  top: 70%;
+  left: 65%;
+  width: 15%;
+  height: 7%;
+}
+
+.button-profile-avatar {
+  position: fixed;
+  top: 45%;
+  left: 70%;
+  width: 11%;
+  height: 8%;
+}
+
+.button-profile-validated {
+  position: fixed;
+  top: 70%;
+  left: 17%;
+  width: 20%;
+  height: 7%;
+}
+
+.image-back-profile{
+  background-image: url('../img/backgrounds/ProfilImage.png');
+  background-position: center;
+  
+}
+
+.button-container {
+  text-align: center;
+}
+
+.button-container button {
+  margin: 5px;
+}
+
+.container-fluid {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-menu {
+  position: absolute;
+  top: 40%;
+  left: 2%;
+  width: fit-content;
+  padding: 2%;
+  background-color: #3a3a3a00;
+  user-select: none;
+}
+
+.game-menu .list-group-item {
+  background-color: #5e5e5e;
+  color: #ffffff;
+  border-radius: 20px;
+  border-color: rgba(33, 149, 243, 0);
+  padding: 1vw 2vw;
+  margin: 1vw 0;
+  text-decoration: none;
+  transition: background-color 0.5s ease-in-out;
+  background-image: url('../assets/textures/black_rock_texture.png');
+  text-align: center;
+}
+
+.game-menu .list-group-item:hover {
+  background-image: url('../assets/textures/rock_textures.png');
+}
+
+.btn-secondary:hover {
+  background-color: lightgray;
+  border-color: lightgray;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .game-menu {
+    width: 20%;
+    padding: 4%;
+  }
+
+  .game-menu .list-group-item {
+    font-size: 4vw;
+    padding: 1vw 1vw;
+    margin: 1vw 0;
+  }
+}
+
+@media (max-width: 1550px) {
+  .nav-link {
+    font-size: large;
+  }
+}
+
+.game-over-container {
+  position: fixed;
+  text-align: center;
+}
+
+.h1-game-over {
+  color: #ff0000;
+  font-size: 230%;
+}
+
+.button-game-over-try {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.button-game-over-give {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #af4c4c;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.victory-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.h1-victory {
+  color: #4caf50;
+}
+
+.p-victory {
+  font-size: 18px;
+}
+
+.experience-victory {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ff08;
+}
+
+.button-victory {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.game-menu-alex {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 350px;
+  padding: 2%;
+  background-color: #3a3a3a00;
+  user-select: none;
+  scale: 1.5;
+}
+
+.game-menu-alex .list-group-item-alex {
+  background-color: #5e5e5e;
+  color: #ffffff;
+  border-radius: 20px;
+  border-color: rgba(0, 0, 0, 0);
+  padding: 1vw 3vw;
+  margin: 1vw 0;
+  text-decoration: none;
+  text-align: center;
+}
+
+.game-menu-alex .list-group-item-alex:hover {
+  transform: scale(1.2);
+}
+
+
+.easy-image_back{
+  background-image: url('../img/backgrounds/levelMapPage2.png');
+  background-position: top;
+  
+}
+
+.medium-image_back{
+  background-image: url('../img/backgrounds/levelMapPageLave2.png');
+  background-position: top;
+  
+}
+
+.hard-image_back{
+  background-image: url('../img/backgrounds/levelMapPageDesert.png');
+  background-position: top;
+}
+
+@media (max-width: 768px) {
+  .game-menu-alex {
+    width: 20%;
+    padding: 4%;
+  }
+
+  .game-menu-alex .list-group-item-alex {
+    font-size: 4vw;
+    padding: 1vw 1vw;
+    margin: 1vw 0;
+  }
+  
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.bg-orange {
+  background-color: #ffa500;
+}
+
+.bg-orange .navbar-nav .nav-link {
+  color: #000000;
+}
+
+.bg-orange .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.avatar-option {
+  cursor: pointer;
+}
+
+.avatar-option.selected {
+  border: 2px solid #ffa500;
+}
+
+#register:hover {
+  cursor: pointer;
+}
+
+.bossAndPlayer {
+  border-bottom: 1px solid #ffffff;
+  display: grid;
+  grid-template-areas: 'player vs boss';
+  grid-template-columns: repeat(3, 1fr);
+}
+.divBoss {
+  grid-area: boss;
+}
+.boss {
+  width: 30%;
+  height: 90%;
+}
+#life {
+  width: 100%;
+  height: 9%;
+  border: 1px solid #ffffff;
+  text-align: center;
+}
+
+#lifeBar {
+  height: 100%;
+  width: 100%;
+  background-color: #ff0000;
+  font-size: 50%;
+}
+
+#divVersus {
+  grid-area: vs;
+}
+
+.imgBoss , .playerImg{
+  width: AUTO;
+  height: 125px;
+  margin-bottom: 10px;
+}
+
+.card-found .back {
+  pointer-events: none; /* Désactive les événements de pointer (clics) sur les cartes trouvées */
+}
+
+.card-found .back img {
+  opacity: 1; /* Rend l'image de la carte trouvée visible */
+}
+/* case ajouter fichier */
+input[type="file"] {
+  height: 3rem; /* Ajustez la hauteur selon vos préférences */
+}
+.divPlayer {
+  grid-area: player;
+}
+.divPlayer,.divBoss{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.playerImg{
+  margin-left: 10px;
+}
+
+.heart,
+.skull {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+
+.imagesOfCards {
+  width: 60%;
+  height: 50%;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.general-table {
+  max-width: 60%;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.general-table th,
+.general-table td {
+  text-align: center;
+}
+
+.general-table th {
+  width: 20%;
+}
+
+.general-table td {
+  width: 40%;
+}
+.divMap{
+  display: flex;
+  flex-direction: column;
+  height: 92.25vh;
+  background-size: 100%  100%;
+  background-repeat: no-repeat;
+}
+.levels{
+  height: 100%;
+  position: relative;
+}
+.rowLevel{
+  position: relative;
+  opacity: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.rowLevel:nth-of-type(1){
+  width: 11%;
+  height: 15%;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  cursor: pointer;
+}
+.rowLevel:nth-of-type(2){
+  width: 11%;
+  height: 16%;
+  position: absolute;
+  bottom: 40%;
+  right: 45%;
+  cursor: pointer;
+}
+.rowLevel:nth-of-type(3){
+  width: 11%;
+  height: 15%;
+  position: absolute;
+  top: 18%;
+  right: 30%;
+  cursor: pointer;
+}
+
