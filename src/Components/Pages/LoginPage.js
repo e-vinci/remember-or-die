@@ -79,7 +79,7 @@ const LoginPage = () => {
     const password = passwordInput.value;
 
     try {
-      const response = await fetch('http://localhost:3000/players/login', {
+      const response = await fetch(`${process.env.API_BASE_URL}/players/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
