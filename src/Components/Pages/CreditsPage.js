@@ -1,5 +1,5 @@
 import Navigate from '../Router/Navigate';
-import { makeDisappearNavbar } from "../../utils/navbarSetup";
+import makeDisappearNavbar from "../../utils/navbarSetup";
 import { clearPage } from "../../utils/render";
 
 const CreditsPage = () => {

@@ -1,6 +1,6 @@
 import Navigate from '../Router/Navigate';
 import { clearPage } from '../../utils/render';
-import { makeDisappearNavbar } from '../../utils/navbarSetup';
+import makeDisappearNavbar from '../../utils/navbarSetup';
 
 const createListGroup = () => {
   const links = [

@@ -1,17 +1,16 @@
 import Navigate from '../Router/Navigate';
 import { clearPage } from '../../utils/render';
-import { playAudio } from '../../utils/audioManager';
+import makeDisappearNavbar from '../../utils/navbarSetup';
+import { getAuthenticatedUser} from '../../utils/auths';
 
-const setupNavbar = () => {
-  const navbar = document.querySelector('#navbarWrapper');
-  navbar.style.display = 'block';
-};
+let user = null; // Variable stockant utilisateur connecte
+
 
   const createListGroup = () => {
     const links = [
-      { text: 'Easy', uri: '/' , img: 'easy-image_back'},
-      { text: 'Medium', uri: '/', img: 'medium-image_back' },
-      { text: 'Hard', uri: '/', img: 'hard-image_back' },
+      { text: 'Facile', uri: '/levels?world=1' , img: 'easy-image_back'},
+      { text: 'Moyen', uri: '/levels?world=2', img: 'medium-image_back' },
+      { text: 'Difficile', uri: '/levels?world=3', img: 'hard-image_back' },
     ];
   
     const listGroup = document.createElement('div');
@@ -36,8 +35,12 @@ const setupNavbar = () => {
 
 const WorldPage = () => {
   clearPage();
-  playAudio();
-  setupNavbar();
+  makeDisappearNavbar(false);
+  user = getAuthenticatedUser();
+  if (!user) {
+    Navigate('/login');
+    return;
+  }
 
   const main = document.querySelector('main');
 

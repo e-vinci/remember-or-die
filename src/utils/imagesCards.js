@@ -85,44 +85,41 @@ import img70 from '../assets/images_cards/Chevalier/level3_12Cards/skelleton_shi
 import img71 from '../assets/images_cards/Chevalier/level3_12Cards/skelleton_spear_1.png';
 import img72 from '../assets/images_cards/Chevalier/level3_12Cards/warrior_2.png';
 
-import levels from '../../data/level.json';
 
-const worlds = levels[1].world;
-const level = levels[2].level_number;
 
-function initializeArrayOfCards() {
+function initializeArrayOfCards(world,levelNumber) {
   let arrayOfCards;
 
   // worlds 1
-  if (level === 1 && worlds === 1) {
+  if (levelNumber === 1 && world === 1) {
     arrayOfCards = [img1, img1, img2, img2, img3, img3, img4, img4];
   }
-  if (level === 2 && worlds === 1) {
+  if (levelNumber === 2 && world === 1) {
     arrayOfCards = [img5, img5, img6, img6, img7, img7, img8, img8];
   }
-  if (level === 3 && worlds === 1) {
+  if (levelNumber === 3 && world === 1) {
     arrayOfCards = [img9, img9, img10, img10, img11, img11,img12,img12];
   }
 
   // worlds 2
-  if (level === 1 && worlds === 2) {
+  if (levelNumber === 1 && world === 2) {
     arrayOfCards = [img13, img13, img14, img14, img15, img15, img16, img16,img17,img17,img18,img18,img19,img19,img20,img20];
   }
-  if (level === 2 && worlds === 2) {
+  if (levelNumber === 2 && world === 2) {
     arrayOfCards = [img21, img21, img22, img22, img23, img23, img24, img24,img25,img25,img26,img26,img27,img27,img28,img28];
   }
-  if (level === 3 && worlds === 2) {
+  if (levelNumber === 3 && world === 2) {
     arrayOfCards= [img29, img29, img30, img30, img31, img31, img32, img32,img33,img33,img34,img34,img35,img35,img36,img36];
   }
 
   // worlds 3
-  if (level === 1 && worlds === 3) {
+  if (levelNumber === 1 && world === 3) {
     arrayOfCards = [img37, img37, img38, img38, img39, img39, img40, img40,img41,img41,img42,img42,img43,img43,img44,img44,img45,img45,img46,img46,img47,img47,img48,img48];
   }
-  if (level === 2 && worlds === 3) {
+  if (levelNumber === 2 && world === 3) {
     arrayOfCards = [img49, img49, img50, img50, img51, img51, img52, img52,img53,img53,img54,img54,img55,img55,img56,img56,img57,img57,img58,img58,img59,img59,img60,img60];
   }
-  if (level === 3 && worlds === 3) {
+  if (levelNumber === 3 && world === 3) {
     arrayOfCards = [img61, img61, img62, img62, img63, img63, img64, img64,img65,img65,img66,img66,img67,img67,img68,img68,img69,img69,img70,img70,img71,img71,img72,img72];
   }
 

@@ -2,7 +2,7 @@ import anime from 'animejs/lib/anime.es';
 import Navigate from '../Router/Navigate';
 import { clearPage } from '../../utils/render';
 import { playAudio } from '../../utils/audioManager';
-import { makeDisappearNavbar } from '../../utils/navbarSetup';
+import makeDisappearNavbar from '../../utils/navbarSetup';
 
 const HomePage = () => {
   clearPage();
