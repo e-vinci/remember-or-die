@@ -1,6 +1,6 @@
-# Boilerplate pour vos applications modernes utilisant Webpack, Phaser (Jeux en 2D) et un routeur
+# Boilerplate de Remember or Die (Frontend)
 # How to use ?
-- Si vous ne l'avez pas fait, vous pouvez cloner le repo associé au boilerplate pour initier votre application : `git clone https://github.com/e-vinci/js-router-boilerplate.git` ou `git clone https://github.com/e-vinci/js-router-boilerplate.git nom-de-votre-projet` pour créer votre projet nommé `nom-de-votre-projet`.
+- Si vous ne l'avez pas fait, vous pouvez cloner le repo associé au boilerplate pour initier votre application : `git clone https://github.com/e-vinci/remember-or-die.git` ou `git clone https://github.com/e-vinci/remember-or-die.git nom-de-votre-projet` pour créer votre projet nommé `nom-de-votre-projet`.
 - **package.json** est le fichier de configuration de votre projet. Veuillez le mettre à jour afin de :
     - donnnez un nom à votre projet & une description ;
     - vous identifier comme auteur.
