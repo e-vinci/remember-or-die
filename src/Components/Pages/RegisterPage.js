@@ -129,7 +129,7 @@ const RegisterPage = () => {
       passwordMismatchError.textContent = "Veuillez entrer un nom d'utilisateur valide";
     } else {
       try {
-        const response = await fetch('http://localhost:3000/players/register', {
+        const response = await fetch(`${process.env.API_BASE_URL}/players/register`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
