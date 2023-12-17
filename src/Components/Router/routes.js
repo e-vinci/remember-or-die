@@ -12,6 +12,7 @@ import ProfilePage from '../Pages/ProfilePage';
 import LevelsPage from '../Pages/LevelsPage';
 import ModifyProfilePage from '../Pages/ModifyProfilePage';
 import ModifyAvatarPage from '../Pages/ModifyAvatar';
+import GdprPage from '../Pages/GdprPage';
 
 const routes = {
   '/': HomePage,
@@ -28,6 +29,7 @@ const routes = {
   '/levels': LevelsPage,
   '/modifyProfile': ModifyProfilePage,
   '/modifyAvatar': ModifyAvatarPage,
+  '/gdpr': GdprPage,
 };
 
 export default routes;

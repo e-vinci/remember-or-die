@@ -25,13 +25,16 @@ const clearAuthenticatedUser = () => {
 };
 const setLastLevel = (newLastLevel) => {
   currentUser.lastLevel = newLastLevel
+  setAuthenticatedUser(currentUser);
 };
 const setXp = (newXp) => {
   currentUser.xp = newXp
+  setAuthenticatedUser(currentUser);
 };
 
 const setAvatar = (newAvatarPath) => {
-  currentUser.avatarPath = newAvatarPath
+  currentUser.avatarPath = newAvatarPath;
+  setAuthenticatedUser(currentUser);
 };
 
 // eslint-disable-next-line object-curly-newline

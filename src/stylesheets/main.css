@@ -521,3 +521,14 @@ h1 {
   cursor: pointer;
 }
 
+.consent {
+  font-size: small;
+}
+
+#consentA {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: small;
+  margin-bottom: 5px;
+}

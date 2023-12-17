@@ -91,6 +91,14 @@ const ProfilePage = () => {
     Navigate('/modifyAvatar');
   });
 
+  const consentA = document.createElement('a');
+  consentA.className = 'fixed-bottom text-center';
+  consentA.setAttribute('id', 'consentA');
+  consentA.innerText = 'Politique de Confidentialité'
+  consentA.addEventListener('click', () => {
+    Navigate('/gdpr');
+  });
+
   titreDiv.appendChild(titre);
   theadDutableau.appendChild(titreDiv);
 
@@ -122,6 +130,7 @@ const ProfilePage = () => {
   profilPageDiv.appendChild(tableProfil);
 
   main.appendChild(profilPageDiv);
+  main.appendChild(consentA);
 };
 
 export default ProfilePage;
